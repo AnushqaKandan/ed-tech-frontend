@@ -1,37 +1,24 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:1337/api';
+const API_URL = 'https://edtech-backend02.onrender.com/api';
 
 export const getCourses = (userId) => {
   return axios.get(`${API_URL}/courses`, {
     params: {
       'filters[createdBy][id][$eq]': userId,
-      populate: {
-        image: true,
-        sections: {
-          populate: ['materials']
-        }
-      },
+      populate: ['image', 'sections', 'sections.materials']
     },
   });
 };
 
 export const createCourse = (courseData) => {
-  return axios.post(`${API_URL}/courses`, {
-    data: courseData,
-  });
+  return axios.post(`${API_URL}/courses`, courseData);
 };
 
 export const getCourseById = (id) => {
   return axios.get(`${API_URL}/courses/${id}`, {
     params: {
-      populate: {
-        image: true,
-        sections: {
-          populate: ['materials']
-        },
-        createdBy: true,
-      },
+      populate: ['image', 'sections', 'sections.materials', 'createdBy']
     },
   });
 };

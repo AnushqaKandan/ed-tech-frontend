@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 const Register = () => {
-  const [searchParams] = useSearchParams();
-  const roleFromUrl = searchParams.get("role") || "student";
+  // const [searchParams] = useSearchParams();
+  // const roleFromUrl = searchParams.get("role") || "student";
 
   const [userData, setUserData] = useState({
     username: "",
     email: "",
     password: "",
-    role: roleFromUrl,
+    // role: roleFromUrl,
   });
 
   const [error, setError] = useState(null);

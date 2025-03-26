@@ -12,8 +12,8 @@ const CourseView = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const { data } = await getCourseById(id);
-        setCourse(data.data);
+        const response = await getCourseById(id);
+        setCourse(response.data.data);
       } catch (err) {
         setError('Failed to load course. Please try again later.');
         console.error(err);
@@ -56,7 +56,7 @@ const CourseView = () => {
       {course.attributes.image?.data && (
         <div className="mb-8">
           <img
-            src={`http://localhost:1337${course.attributes.image.data.attributes.url}`}
+            src={`https://edtech-backend02.onrender.com${course.attributes.image.data.attributes.url}`}
             alt={course.attributes.name}
             className="rounded-lg w-full max-h-96 object-cover"
           />

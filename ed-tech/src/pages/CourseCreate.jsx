@@ -110,7 +110,7 @@ const CourseCreate = () => {
                 htmlFor="price"
                 className="block text-sm font-medium text-gray-700"
               >
-                Price ($)
+                Price (R)
               </label>
               <Field
                 type="number"

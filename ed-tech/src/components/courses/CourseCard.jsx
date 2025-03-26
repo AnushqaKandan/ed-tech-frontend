@@ -6,7 +6,7 @@ const CourseCard = ({ course }) => {
       {course.attributes.image?.data && (
         <div className="h-48 overflow-hidden">
           <img
-            src={`http://localhost:1337${course.attributes.image.data.attributes.url}`}
+            src={`https://edtech-backend02.onrender.com${course.attributes.image.data.attributes.url}`}
             alt={course.attributes.name}
             className="w-full h-full object-cover"
           />
@@ -18,7 +18,7 @@ const CourseCard = ({ course }) => {
           {course.attributes.description}
         </p>
         <div className="flex justify-between items-center">
-          <span className="font-medium text-indigo-600">${course.attributes.price}</span>
+          <span className="font-medium text-indigo-600">R{course.attributes.price}</span>
           <Link
             to={`/courses/${course.id}`}
             className="text-sm px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700"

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:1337/api';
+const API_URL = 'https://edtech-backend02.onrender.com/api';
 
 export const login = (credentials) => {
   return axios.post(`${API_URL}/auth/local`, credentials);
